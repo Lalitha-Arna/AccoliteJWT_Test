@@ -10,16 +10,18 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableSwagger2
 @SpringBootApplication
-public class UserServiceApplication {
+public class UserServiceApplication {  // user service app 
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {  // main app
 		SpringApplication.run(UserServiceApplication.class, args);
 	}
 
 	@Bean
-	public Docket api() {
+	public Docket api() {   /*scan base package*/
 		return new Docket(DocumentationType.SWAGGER_2).select()
 				.apis(RequestHandlerSelectors.basePackage("com.accolite.controller")).build();
 	}
+
+	
 
 }
